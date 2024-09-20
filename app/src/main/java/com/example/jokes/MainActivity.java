@@ -15,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnNextJoke;
+    private TextView textJoke;
+    private Joke[] jokesArray;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +27,30 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
         });
+            jokesArray=new Joke[]{
+                    new Joke("elso vicc","szamozott vicc"),
+                    new Joke("masodik vicc","szamozott vicc"),
+                    new Joke("harmadik vicc","szamozott vicc"),
+                    new Joke("szia vicc","uj vicc"),
+                    new Joke("helo vicc","uj vicc"),
+                    new Joke("ati vicc","nev vicc"),
+                    new Joke("satya vicc","nev vicc"),
+            };
+
+
         btnNextJoke = findViewById(R.id.btnNextJoke);
+        textJoke = findViewById(R.id.textJoke);
     }
-    String szoveg="asafiu";
+
+    int lepes=0;
 
     public void next(View v) {
-        btnNextJoke.setBackgroundColor(Color.RED);
-        btnNextJoke.setText(szoveg);
+        textJoke.setText(jokesArray[lepes].getJokeText());
+        for(int i=0; i<lepes; i++){
+            textJoke.setText(jokesArray[lepes].getJokeText());
+        }
+        lepes++;
+
     }
 }
