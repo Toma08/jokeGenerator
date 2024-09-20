@@ -25,13 +25,14 @@ public class MainActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-        });
 
+        });
+        btnNextJoke = findViewById(R.id.btnNextJoke);
     }
     String szoveg="asafiu";
 
     public void next(View v) {
         btnNextJoke.setBackgroundColor(Color.RED);
-        //btnNextJoke.setText(szoveg);
+        btnNextJoke.setText(szoveg);
     }
 }
